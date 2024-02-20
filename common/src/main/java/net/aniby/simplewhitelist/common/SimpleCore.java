@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SimpleCore {
-    public static final String permission = "simplewhitelist.command";
+    public static final String PERMISSION = "simplewhitelist.command";
     private static SimpleConfiguration configuration;
 
     public static SimpleConfiguration getConfiguration() {

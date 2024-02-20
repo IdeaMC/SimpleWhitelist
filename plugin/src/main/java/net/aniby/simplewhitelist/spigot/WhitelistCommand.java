@@ -15,7 +15,7 @@ public class WhitelistCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length >= 1) {
-            String result = SimpleCore.checkSubcommand(args[0], sender.hasPermission(SimpleCore.permission));
+            String result = SimpleCore.checkSubcommand(args[0], sender.hasPermission(SimpleCore.PERMISSION));
             if (result == null) {
                 String subMessage = SimpleCore.getConfiguration().getCommandMessages().get(args[0]);
                 switch (args[0]) {
@@ -63,7 +63,7 @@ public class WhitelistCommand implements CommandExecutor, TabCompleter {
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
         List<String> list = new ArrayList<>();
-        if (sender.hasPermission(SimpleCore.permission))
+        if (sender.hasPermission(SimpleCore.PERMISSION))
             list = SimpleCore.getCompleter(args);
         return list;
     }

@@ -84,7 +84,6 @@ public class SimpleConfiguration {
                     (String) key, value.getString().replace("\\n", "\n")
             );
         });
-        System.out.println(this.messages.get("help"));
 
         this.root.getNode("command_messages").getChildrenMap().forEach((key, value) -> {
             this.commandMessages.put(

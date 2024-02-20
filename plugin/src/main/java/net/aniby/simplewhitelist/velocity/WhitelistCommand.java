@@ -17,7 +17,7 @@ public class WhitelistCommand implements SimpleCommand {
         String[] args = invocation.arguments();
 
         if (args.length >= 1) {
-            String result = SimpleCore.checkSubcommand(args[0], source.hasPermission(SimpleCore.permission));
+            String result = SimpleCore.checkSubcommand(args[0], source.hasPermission(SimpleCore.PERMISSION));
             if (result == null) {
                 String subMessage = SimpleCore.getConfiguration().getCommandMessages().get(args[0]);
                 switch (args[0]) {
@@ -65,7 +65,7 @@ public class WhitelistCommand implements SimpleCommand {
     public CompletableFuture<List<String>> suggestAsync(final Invocation invocation) {
         CommandSource sender = invocation.source();
         List<String> list = new ArrayList<>();
-        if (sender.hasPermission(SimpleCore.permission)) {
+        if (sender.hasPermission(SimpleCore.PERMISSION)) {
             String[] args = invocation.arguments();
             list = SimpleCore.getCompleter(args);
         }
