@@ -4,6 +4,8 @@
 
 ---
 
+[简体中文](README_ZH.md)
+
 **SimpleWhitelist** is an *essential plugin* for your private server.
 
 ### Why should you choose this plugin?
